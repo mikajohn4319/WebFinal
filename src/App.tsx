@@ -1,8 +1,10 @@
 import React from 'react';
+import Form from './Form';
 
 function App() {
-  const value = 'World';
-  return <div>Hello {value}</div>;
+  return(
+    <Form/>
+  )
 }
 
 export default App;
