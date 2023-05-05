@@ -1,9 +1,17 @@
 import React from 'react';
+import BuildingTable from './BuildingTable';
 import Form from './Form';
 
 function App() {
   return(
-    <Form/>
+    <div>
+      <div>
+        <Form />
+        </div>
+      <div>
+        <BuildingTable/>
+        </div>
+    </div>
   )
 }
 
