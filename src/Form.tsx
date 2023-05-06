@@ -13,10 +13,34 @@ interface Building {
 }
 
 function Form() {
-    const { register, handleSubmit, formState: {errors, isValid} } = useForm<Building>();
+    const { register, handleSubmit, formState: {errors} } = useForm<Building>();
 
-    const onSubmit =(data: FieldValues) => {
+    // const onSubmit =(data: FieldValues) => {
+    //     fetch('/buildings', {
+    //         method: 'Post',
+    //         data: JSON.stringify(data),
+    //     });
+    // }
+
+    const onSubmit = async (data: FieldValues) => {
         console.log(data)
+        console.log(JSON.stringify(data))
+        try {
+            fetch("http://localhost:3000/buildings", {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((response) => {
+                console.log(response);
+                window.location.reload();
+            })
+          } catch (error) {
+            console.error(error);
+          }
     }
 
     return (
