@@ -44,7 +44,7 @@ function Form() {
     }
 
     return (
-        <div className="container">
+        <div className="container" style={{padding:20}}>
             <form onSubmit= {handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="id" className="form-label">Building ID</label>
@@ -106,7 +106,7 @@ function Form() {
                     {errors.decription?.type === 'minLength' && <p>Description must be at least 1 character.</p>}
                 </div>
 
-                <div>
+                <div style={{paddingTop:20}}>
                     <button className= "btn btn-primary" type="submit">Submit</button>
                 </div>
             </form>

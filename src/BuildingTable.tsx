@@ -8,7 +8,7 @@ interface Building {
   lat: number;
   long: number;
   code: string;
-  description: string;
+  decription: string;
 }
 
 function BuildingTable() {
@@ -37,9 +37,8 @@ function BuildingTable() {
   }
 
   return (
-    <div style={{display: 'flex', justifyContent:'center',}}>
-      {/* <h1>Building List</h1> */}
-      <table>
+    <div style={{display: 'flex', justifyContent:'center',padding:20}}>
+      <table style={{"borderWidth":"1px", 'borderColor':"#aaaaaa", 'borderStyle':'solid'}}>
         <thead>
           <tr>
             <th>ID</th>
@@ -59,7 +58,7 @@ function BuildingTable() {
               <td>{buildings.lat}</td>
               <td>{buildings.long}</td>
               <td>{buildings.code}</td>
-              <td>{buildings.description}</td> 
+              <td>{buildings.decription}</td> 
               <td><button onClick={() => handleDelete(buildings._id)}>Delete</button></td>
             </tr>
             );
